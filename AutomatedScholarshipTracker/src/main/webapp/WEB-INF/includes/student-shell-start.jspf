@@ -1,0 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<nav class="navbar">
+    <div class="navbar-inner">
+        <a href="${pageContext.request.contextPath}/student/dashboard" class="navbar-brand" style="text-decoration:none;">
+            <span class="brand-badge">SD</span> ScholarTrack
+        </a>
+        <div class="navbar-user">
+            <span class="name">${sessionScope.user.fullName}</span>
+            <a href="${pageContext.request.contextPath}/logout" class="btn btn-secondary btn-sm">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-section-title">Menu</div>
+        <a class="sidebar-link ${pageName == 'dashboard' ? 'active' : ''}" href="${pageContext.request.contextPath}/student/dashboard">Dashboard</a>
+        <a class="sidebar-link ${pageName == 'profile' ? 'active' : ''}" href="${pageContext.request.contextPath}/student/profile">My Profile</a>
+        <a class="sidebar-link ${pageName == 'scholarships' ? 'active' : ''}" href="${pageContext.request.contextPath}/student/scholarships">Scholarships</a>
+        <a class="sidebar-link ${pageName == 'applications' ? 'active' : ''}" href="${pageContext.request.contextPath}/student/applications">My Applications</a>
+        <div class="sidebar-section-title">Account</div>
+        <a class="sidebar-link" href="${pageContext.request.contextPath}/logout">Logout</a>
+    </aside>
+    <main class="main-content">
